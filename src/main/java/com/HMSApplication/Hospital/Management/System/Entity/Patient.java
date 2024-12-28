@@ -22,7 +22,7 @@ public class Patient {
     public String dose;
     @Column(name="fees")
     public String fees;
-    @Column(name="uregency")
+    @Column(name="urgency")
     public String urgency;
 
 
