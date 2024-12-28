@@ -1,11 +1,12 @@
 package com.HMSApplication.Hospital.Management.System;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class HospitalManagementSystemApplication {
 	public static void main(String[] args) {
-//		SpringApplication.run(HospitalManagementSystemApplication.class, args);
+		SpringApplication.run(HospitalManagementSystemApplication.class, args);
 		System.out.println("Hello World");
 	}
 }

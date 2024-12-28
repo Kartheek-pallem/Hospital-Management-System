@@ -1,4 +1,4 @@
-package com.HMSApplication.Hospital.Management.System.Entity;
+package com.HMSApplication.Hospital.Management.System.DoctorLogin.Entity;
 
 import jakarta.persistence.*;
 
