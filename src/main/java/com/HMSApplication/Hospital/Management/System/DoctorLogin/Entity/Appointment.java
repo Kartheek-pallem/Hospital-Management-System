@@ -15,16 +15,16 @@ public class Appointment {
     @Column(name="age")
     private String age;
     @Column(name="symptoms")
-    private String symptyoms;
+    private String symptoms;
     @Column(name="number")
     private int number;
 
 
-    public Appointment(long id, String name, String age, String symptyoms, int number) {
+    public Appointment(long id, String name, String age, String symptoms, int number) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.symptyoms = symptyoms;
+        this.symptoms = symptoms;
         this.number = number;
     }
 
@@ -52,12 +52,12 @@ public class Appointment {
         this.age = age;
     }
 
-    public String getSymptyoms() {
-        return symptyoms;
+    public String getSymptoms() {
+        return symptoms;
     }
 
-    public void setSymptyoms(String symptyoms) {
-        this.symptyoms = symptyoms;
+    public void setSymptoms(String symptoms) {
+        this.symptoms = symptoms;
     }
 
     public int getNumber() {
