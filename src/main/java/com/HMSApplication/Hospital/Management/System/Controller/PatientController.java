@@ -21,9 +21,8 @@ public class PatientController {
         return patientRepository.save(patient);
     }
     @GetMapping("/get")
-    public String getPatient(){
-        List<Patient> p = patientRepository.findAll();
-        return p.get(0).name;
+    public List<Patient> getPatient() {
+        return patientRepository.findAll();
     }
 
 }
