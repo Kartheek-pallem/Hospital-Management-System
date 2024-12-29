@@ -1,0 +1,48 @@
+.table-header th {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Light grey for odd rows */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #ffffff; /* White for even rows */
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6; /* Light grey border */
+}
+
+.table th, .table td {
+    vertical-align: middle; /* Centers content vertically */
+    text-align: center; /* Centers content horizontally */
+    padding: 12px;
+}
+.table tr{
+    padding: 12px;
+}
+
+.table {
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-brand {
+    color: chartreuse !important;
+}
+
+.nav-link.active {
+    color: blue !important;
+}
+
+h2 {
+    margin: 0;
+}

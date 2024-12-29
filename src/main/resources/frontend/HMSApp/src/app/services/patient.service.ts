@@ -13,9 +13,6 @@ import { Patient } from "../patient/patient";
 
         private baseURL = "http://localhost:8080/patients/get";
         getPatientList():Observable<Patient[]>{
-
-
-
             return this.httpClient.get<Patient[]>(this.baseURL);
         }
     }
