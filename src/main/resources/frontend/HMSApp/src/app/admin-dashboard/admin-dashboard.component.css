@@ -40,9 +40,94 @@
 }
 
 .nav-link.active {
-    color: blue !important;
+    color: rgb(255, 0, 195) !important;
 }
 
 h2 {
     margin: 0;
 }
+
+
+
+
+.custom-navbar {
+    background-color: #2a2a72; /* Set your desired background color */
+    padding: 1rem; /* Add padding for better spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for a sleek look */
+    border-bottom: 3px solid #1f1f55; /* Optional: adds a border at the bottom */
+}
+
+.navbar-title {
+    color: #ffffff; /* Title text color */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1rem; /* Spacing between title and adjacent elements */
+}
+
+.navbar-brand {
+    color: #00ff7f !important; /* Brand text color */
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: #ffffff !important; /* Link text color */
+    font-size: 1rem;
+    margin-left: 1rem; /* Add spacing between nav links */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-link:hover {
+    color: #ffcc00 !important; /* Hover color */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Ensure responsive alignment */
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+footer {
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #343a40;
+    color: white;
+}
+
+footer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+    animation: pulse 1s infinite ease-in-out;
+    transform: translateX(-50%);
+}
+
+@keyframes pulse {
+    0% {
+        width: 50px;
+        background-color: #007bff;
+    }
+    50% {
+        width: 70px;
+        background-color: #0056b3;
+    }
+    100% {
+        width: 50px;
+        background-color: #007bff;
+    }
+}
+
