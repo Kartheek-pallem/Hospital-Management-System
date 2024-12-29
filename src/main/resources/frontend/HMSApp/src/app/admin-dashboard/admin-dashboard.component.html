@@ -1,0 +1,25 @@
+<p>admin-dashboard works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>age</th>
+            <th>bloodGroup</th>
+            <th>Prescription</th>
+            <th>dose</th>
+            <th>urgency</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let patients of PatientsList">
+            <td>{{patients.patientId}}</td>
+            <td>{{patients.name}}</td>
+            <td>{{patients.age}}</td>
+            <td>{{patients.bloodGroup}}</td>
+            <td>{{patients.prescription}}</td>
+            <td>{{patients.dose}}</td>
+            <td>{{patients.urgency}}</td>
+        </tr>
+    </tbody>
+</table>
