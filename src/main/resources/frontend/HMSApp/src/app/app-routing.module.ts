@@ -4,7 +4,7 @@ import { Appointment } from './appointment/appointment.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
-  { path: '', component: AdminDashboardComponent }, // Default route
+  { path: 'admin', component: AdminDashboardComponent }, // Default route
   { path: 'appointmentlist', component: Appointment}, 
 ];
 
