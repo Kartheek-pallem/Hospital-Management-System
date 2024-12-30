@@ -11,7 +11,7 @@ export class AppointmentService{
 
     }
 
-    private baseURL = "http://localhost:8080/appointments/get";
+    private baseURL = "http://localhost:8080/appointment/get";
     getAppointmentsList(){
         return this.httpClient.get<Appointment[]>(this.baseURL);
     }

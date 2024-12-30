@@ -11,7 +11,11 @@ import { AppointmentService } from '../services/appointment.service';
 export class Appointment {
 
   constructor(private appointmentService:AppointmentService){
+    
+  }
 
+  ngOnInit(){
+    this.getAppointmentsList();
   }
 
   appointmentsList :any = [];

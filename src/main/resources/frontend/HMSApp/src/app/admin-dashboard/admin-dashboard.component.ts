@@ -12,7 +12,9 @@ import { Router } from '@angular/router';
 export class AdminDashboardComponent {
   PatientsList: any[] = [];
 
-  constructor(private patientService: PatientService, private router: Router) {}
+  constructor(private patientService: PatientService, private router: Router) {
+    
+  }
 
   ngOnInit() {
     this.getPatientsService();
