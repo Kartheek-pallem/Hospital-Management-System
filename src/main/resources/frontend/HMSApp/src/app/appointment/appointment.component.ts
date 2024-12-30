@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppointmentService } from '../services/appointment.service';
 
 @Component({
   selector: 'app-appointment',
@@ -7,6 +8,19 @@ import { Component } from '@angular/core';
   templateUrl: './appointment.component.html',
   styleUrl: './appointment.component.css'
 })
-export class AppointmentComponent {
+export class Appointment {
+
+  constructor(private appointmentService:AppointmentService){
+
+  }
+
+  appointmentsList :any = [];
+
+
+  getAppointmentsList(){
+    return this.appointmentService.getAppointmentsList().subscribe(data=>{
+      this.appointmentsList = data;
+    })
+  }
 
 }

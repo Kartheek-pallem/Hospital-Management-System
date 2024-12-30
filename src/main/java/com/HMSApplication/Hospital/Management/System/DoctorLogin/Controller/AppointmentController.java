@@ -6,13 +6,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/appointment")
 public class AppointmentController {
-    private AppointmentRepository appointmentRepository;
+    private final AppointmentRepository appointmentRepository;
+
+    public AppointmentController(AppointmentRepository appointmentRepository) {
+        this.appointmentRepository = appointmentRepository;
+    }
 
     @GetMapping("/get")
-    public Appointment getAppointment(){
-        return (Appointment) appointmentRepository.findAll();
+    public List<Appointment> getAppointments(){
+        return appointmentRepository.findAll();
     }
 }

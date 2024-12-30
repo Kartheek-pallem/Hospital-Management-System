@@ -17,16 +17,16 @@ public class Appointment {
     @Column(name="symptoms")
     private String symptoms;
     @Column(name="number")
-    private int number;
+    private String number;
 
 
-    public Appointment(long id, String name, String age, String symptoms, int number) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.symptoms = symptoms;
-        this.number = number;
-    }
+//    public Appointment(long id, String name, String age, String symptoms, String number) {
+//        this.id = id;
+//        this.name = name;
+//        this.age = age;
+//        this.symptoms = symptoms;
+//        this.number = number;
+//    }
 
     public long getId() {
         return id;
@@ -60,11 +60,11 @@ public class Appointment {
         this.symptoms = symptoms;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 }

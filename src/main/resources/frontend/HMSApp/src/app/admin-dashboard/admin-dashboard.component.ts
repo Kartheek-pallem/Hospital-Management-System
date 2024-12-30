@@ -8,7 +8,9 @@ import { PatientService } from '../services/patient.service';
   templateUrl: './admin-dashboard.component.html',
   styleUrl: './admin-dashboard.component.css'
 })
+
 export class AdminDashboardComponent {
+
 
   PatientsList:any=[];
 
