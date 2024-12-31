@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Submit Form</h1>
+<div mat-dialog-content>
+  <form #form="ngForm">
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Enter your name" name="name" ngModel required>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Enter your email" name="email" ngModel required>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="form.value" [disabled]="form.invalid">Submit</button>
+</div>
