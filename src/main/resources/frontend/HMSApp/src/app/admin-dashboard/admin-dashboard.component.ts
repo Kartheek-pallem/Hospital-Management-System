@@ -20,7 +20,7 @@ export class AdminDashboardComponent {
     this.getPatientsService();
   }
 
-  onElementClick() {
+  showAppointmentsList() {
     this.router.navigate(['/appointmentlist']);
   }
 

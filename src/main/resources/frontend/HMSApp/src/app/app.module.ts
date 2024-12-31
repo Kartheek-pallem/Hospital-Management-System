@@ -7,6 +7,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.component';
 import { Appointment } from './appointment/appointment.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Appointment } from './appointment/appointment.component';
     HttpClientModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
