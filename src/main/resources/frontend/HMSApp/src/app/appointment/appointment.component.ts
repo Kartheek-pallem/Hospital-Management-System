@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AppointmentService } from '../services/appointment.service';
+import { AddAppointmentComponent } from '../add.appointment/add.appointment.component';
 
 @Component({
   selector: 'app-appointment',
@@ -10,7 +12,7 @@ import { AppointmentService } from '../services/appointment.service';
 })
 export class Appointment {
 
-  constructor(private appointmentService:AppointmentService){
+  constructor(private appointmentService:AppointmentService,private dialog: MatDialog){
     
   }
 
@@ -25,6 +27,19 @@ export class Appointment {
     return this.appointmentService.getAppointmentsList().subscribe(data=>{
       this.appointmentsList = data;
     })
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddAppointmentComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Form Data:', result);
+        // Handle form submission logic here
+      }
+    });
   }
 
 }

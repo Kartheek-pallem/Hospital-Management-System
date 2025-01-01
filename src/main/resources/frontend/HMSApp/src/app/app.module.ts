@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientComponent } from './patient/patient.component';
 import { Appointment } from './appointment/appointment.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AddAppointmentComponent } from './add.appointment/add.appointment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminDashboardComponent,
     PatientComponent,
-    Appointment
+    Appointment,
+    AddAppointmentComponent
   ],
   imports: [
     BrowserModule,
