@@ -9,6 +9,10 @@ import { PatientComponent } from './patient/patient.component';
 import { Appointment } from './appointment/appointment.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AddAppointmentComponent } from './add.appointment/add.appointment.component';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { AddAppointmentComponent } from './add.appointment/add.appointment.compo
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [
     provideClientHydration(withEventReplay()),
