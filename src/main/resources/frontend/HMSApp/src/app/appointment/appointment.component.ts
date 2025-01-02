@@ -32,6 +32,8 @@ export class Appointment {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddAppointmentComponent, {
       width: '400px',
+      enterAnimationDuration: '300ms',
+      exitAnimationDuration: '200ms'
     });
 
     dialogRef.afterClosed().subscribe(result => {

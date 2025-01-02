@@ -1,17 +1,30 @@
-<h1 mat-dialog-title>Submit Form</h1>
-<div mat-dialog-content>
-  <form #form="ngForm">
-    <mat-form-field class="full-width">
-      <mat-label>Name</mat-label>
-      <input matInput placeholder="Enter your name" name="name" ngModel required>
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Enter your email" name="email" ngModel required>
-    </mat-form-field>
-  </form>
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button  [disabled]="form.invalid">Submit</button>
+<div @dialogAnimation>
+  <h1 mat-dialog-title>Submit Form</h1>
+  <div mat-dialog-content>
+    <form #form="ngForm" class="form-container">
+      <mat-form-field class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter your name" name="name" ngModel required>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" placeholder="Enter your Age" name="age" ngModel>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Phone Number</mat-label>
+        <input matInput type="tel" placeholder="Phone Number" name="number" ngModel>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Symptoms</mat-label>
+        <input matInput placeholder="Symptoms" name="symptoms" ngModel>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button color="primary" [disabled]="form.invalid">Submit</button>
+  </div>
 </div>
