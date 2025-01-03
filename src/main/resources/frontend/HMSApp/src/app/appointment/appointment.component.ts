@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppointmentService } from '../services/appointment.service';
 import { AddAppointmentComponent } from '../add.appointment/add.appointment.component';
@@ -9,6 +9,10 @@ import { AddAppointmentComponent } from '../add.appointment/add.appointment.comp
   
   templateUrl: './appointment.component.html',
   styleUrl: './appointment.component.css'
+})
+
+@Injectable({
+  providedIn: 'root', // Makes the service available application-wide
 })
 export class Appointment {
 

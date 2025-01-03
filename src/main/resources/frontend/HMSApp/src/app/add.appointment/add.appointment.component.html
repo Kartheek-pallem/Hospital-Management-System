@@ -25,6 +25,6 @@
   </div>
   <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button color="primary" [disabled]="form.invalid">Submit</button>
+    <button mat-button color="primary" [disabled]="form.invalid" (click)="onSubmit(form)">Submit</button>
   </div>
 </div>
