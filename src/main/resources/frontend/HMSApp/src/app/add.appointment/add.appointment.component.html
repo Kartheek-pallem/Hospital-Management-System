@@ -1,23 +1,23 @@
-<div @dialogAnimation>
-  <h1 mat-dialog-title>Submit Form</h1>
+<div @dialogAnimation class="dialog-top">
+  <h2 mat-dialog-title class="dialog-container">Add appointment</h2>
   <div mat-dialog-content>
     <form #form="ngForm" class="form-container">
-      <mat-form-field class="full-width">
+      <mat-form-field class="dialog-container">
         <mat-label>Name</mat-label>
         <input matInput placeholder="Enter your name" name="name" ngModel required>
       </mat-form-field>
 
-      <mat-form-field class="full-width">
+      <mat-form-field class="dialog-container">
         <mat-label>Age</mat-label>
         <input matInput type="number" placeholder="Enter your Age" name="age" ngModel required>
       </mat-form-field>
 
-      <mat-form-field class="full-width">
+      <mat-form-field class="dialog-container">
         <mat-label>Phone Number</mat-label>
-        <input matInput type="tel" placeholder="Phone Number" name="number" ngModel required>
+        <input matInput type="number" placeholder="Phone Number" name="number" ngModel required>
       </mat-form-field>
 
-      <mat-form-field class="full-width">
+      <mat-form-field class="dialog-container">
         <mat-label>Symptoms</mat-label>
         <input matInput placeholder="Symptoms" name="symptoms" ngModel required>
       </mat-form-field>
@@ -28,3 +28,45 @@
     <button mat-button color="primary" [disabled]="form.invalid" (click)="onSubmit(form)">Submit</button>
   </div>
 </div>
+
+<!-- <div @dialogAnimation class="dialog-top">
+  <h2 mat-dialog-title class="dialog-container">Add Appointment</h2>
+  <div mat-dialog-content>
+    <form [formGroup]="appointmentForm" class="form-container">
+      <mat-form-field class="dialog-container">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter your name" />
+        <mat-error *ngIf="name?.invalid && name?.touched">Name is required.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="dialog-container">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" formControlName="age" placeholder="Enter your age" />
+        <mat-error *ngIf="age?.invalid && age?.touched">
+          <span *ngIf="age?.errors?.required">Age is required.</span>
+          <span *ngIf="age?.errors?.min">Age must be greater than 0.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="dialog-container">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="number" placeholder="Phone Number" />
+        <mat-error *ngIf="number?.invalid && number?.touched">
+          <span *ngIf="number?.errors?.required">Phone number is required.</span>
+          <span *ngIf="number?.errors?.pattern">Phone number must be 10 digits.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="dialog-container">
+        <mat-label>Symptoms</mat-label>
+        <input matInput formControlName="symptoms" placeholder="Symptoms" />
+        <mat-error *ngIf="symptoms?.invalid && symptoms?.touched">Symptoms are required.</mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button color="primary" [disabled]="appointmentForm.invalid" (click)="onSubmit(appointmentForm)">Submit</button>
+  </div>
+</div>
+ -->

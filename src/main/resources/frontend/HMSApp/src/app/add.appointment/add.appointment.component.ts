@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AppointmentService } from '../services/appointment.service';
 import { Appointment } from '../appointment/appointment.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add.appointment',
@@ -24,12 +25,20 @@ import { Appointment } from '../appointment/appointment.component';
 })
 export class AddAppointmentComponent {
 
-  constructor(private dialogRef:MatDialogRef<AddAppointmentComponent>, private appointmentService:AppointmentService, private appointment:Appointment){
+  appointmentForm:FormGroup | undefined;
+
+  constructor(private dialogRef:MatDialogRef<AddAppointmentComponent>, private appointmentService:AppointmentService, private appointment:Appointment, private formBuilder:FormBuilder){
 
   }
 
   ngOnInit(){
     this.appointmentService.getAppointmentsList();
+    this.appointmentForm = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      age: ['', [Validators.required, Validators.min(0)]],
+      number: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      symptoms: ['', [Validators.required]],
+    });
   }
 
 

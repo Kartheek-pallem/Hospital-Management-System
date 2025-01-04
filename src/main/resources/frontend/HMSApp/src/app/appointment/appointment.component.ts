@@ -37,7 +37,8 @@ export class Appointment {
     const dialogRef = this.dialog.open(AddAppointmentComponent, {
       width: '400px',
       enterAnimationDuration: '300ms',
-      exitAnimationDuration: '200ms'
+      exitAnimationDuration: '200ms',
+      panelClass: 'add-appointment-dialog-container'
     });
 
     dialogRef.afterClosed().subscribe(result => {
