@@ -37,4 +37,32 @@ button[color="primary"]:hover {
   button[mat-icon-button]:hover {
     animation: squishBounceJump 1s ease-in-out infinite;
   }
-  
+  .overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    z-index: 1000;
+}
+
+.overlay-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.data-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 15px;
+    flex: 1 0 45%; /* Two boxes per row */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
