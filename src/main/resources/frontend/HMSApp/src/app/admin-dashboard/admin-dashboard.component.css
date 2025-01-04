@@ -95,39 +95,5 @@ h2 {
 
 
 
-footer {
-    position: relative;
-    text-align: center;
-    padding: 20px 0;
-    background-color: #343a40;
-    color: white;
-}
 
-footer::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 50px;
-    height: 4px;
-    background-color: #007bff;
-    border-radius: 2px;
-    animation: pulse 1s infinite ease-in-out;
-    transform: translateX(-50%);
-}
-
-@keyframes pulse {
-    0% {
-        width: 50px;
-        background-color: #007bff;
-    }
-    50% {
-        width: 70px;
-        background-color: #0056b3;
-    }
-    100% {
-        width: 50px;
-        background-color: #007bff;
-    }
-}
 
