@@ -26,12 +26,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let appointments of appointmentsList">
-                        <td>{{appointments.id}}</td>
-                        <td>{{appointments.name}}</td>
-                        <td>{{appointments.age}}</td>
-                        <td>{{appointments.number}}</td>
-                        <td>{{appointments.symptoms}}</td>
+                    <tr *ngFor="let appointment of appointmentsList">
+                        <td [ngStyle]="{'width': '10%'}">APPOIN_{{appointment.id}}</td>
+                        <td [ngStyle]="{'width': '20%'}">{{appointment.name}}</td>
+                        <td [ngStyle]="{'width': '10%'}">{{appointment.age}}</td>
+                        <td [ngStyle]="{'width': '15%'}">{{appointment.number}}</td>
+                        <td>{{appointment.symptoms}}</td>
+                        <td [ngStyle]="{'width': '10%'}">
+                            <button mat-icon-button color="warn" 
+                                [@hoverEffect] 
+                                (mouseover)="onHoverIcon()" 
+                                (mouseleave)="onLeaveIcon()" 
+                                (click)="deleteAppointment(appointment)" 
+                                title="Delete Appointment">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+
+                        <button mat-icon-button color="primary" 
+                                [@hoverEffect] 
+                                (mouseover)="onHoverIcon()" 
+                                (mouseleave)="onLeaveIcon()"
+                                title="View Appointment">
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+
+                        </td>
+                        
                     </tr>
                 </tbody>
             </table>

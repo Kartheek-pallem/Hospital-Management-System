@@ -2,13 +2,21 @@ import { Component, Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppointmentService } from '../services/appointment.service';
 import { AddAppointmentComponent } from '../add.appointment/add.appointment.component';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-appointment',
   standalone: false,
   
   templateUrl: './appointment.component.html',
-  styleUrl: './appointment.component.css'
+  styleUrl: './appointment.component.css',
+  animations:[
+    trigger('hoverEffect', [
+      state('normal', style({ transform: 'scale(1)' })),
+      state('hovered', style({ transform: 'scale(1.1)' })),
+      transition('normal <=> hovered', animate('0.2s ease-in-out')),
+    ]),
+  ]
 })
 
 @Injectable({
@@ -47,6 +55,19 @@ export class Appointment {
         // Handle form submission logic here
       }
     });
+  }
+  deleteAppointment(appointment:any){
+
+  }
+
+  hoverState = 'normal';
+
+  onHoverIcon() {
+    this.hoverState = 'hovered';
+  }
+
+  onLeaveIcon() {
+    this.hoverState = 'normal';
   }
 
 }
