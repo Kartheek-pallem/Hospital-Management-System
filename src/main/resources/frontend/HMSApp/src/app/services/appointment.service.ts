@@ -18,7 +18,13 @@ export class AppointmentService{
     }
 
     addAppointments(body: Appointment): Observable<Appointment>{
-        return this.httpClient.post<Appointment>(`${this.baseURL}add`, body);
+        const url = new URL(this.baseURL+'add');
+        return this.httpClient.post<Appointment>(url.toString(), body);
     }
-
+    deleteAppointment(id: number): Observable<any> {
+        const url = new URL(this.baseURL+'delete/'+id);
+        console.log(url);
+        return this.httpClient.delete<any>(url.toString());
+    }
+    
 }

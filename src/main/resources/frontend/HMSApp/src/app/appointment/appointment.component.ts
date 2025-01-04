@@ -46,7 +46,6 @@ export class Appointment {
       width: '400px',
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '200ms',
-      panelClass: 'add-appointment-dialog-container'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -57,7 +56,10 @@ export class Appointment {
     });
   }
   deleteAppointment(appointment:any){
-
+    this.appointmentService.deleteAppointment(appointment.id).subscribe(response=>{
+      console.log(response);
+    });
+    window.location.reload();
   }
 
   hoverState = 'normal';
