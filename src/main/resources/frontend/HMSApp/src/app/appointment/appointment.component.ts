@@ -51,7 +51,7 @@ export class Appointment {
     size: number;
     color: string;
     state: string;
-}> = [];
+  }> = [];
 
   constructor(private appointmentService:AppointmentService,private dialog: MatDialog){
     

@@ -11,8 +11,13 @@ import { Patient } from "../patient/patient";
 
         }
 
-        private baseURL = "http://localhost:8080/patients/get";
+        private baseURL = "http://localhost:8080/patients/";
         getPatientList():Observable<Patient[]>{
-            return this.httpClient.get<Patient[]>(this.baseURL);
+            return this.httpClient.get<Patient[]>(this.baseURL+'get');
+        }
+
+        deletePatient(id:number):Observable<any>{
+            var url = new URL(this.baseURL+'delete/'+id);
+            return this.httpClient.delete<any>(url.toString());
         }
     }

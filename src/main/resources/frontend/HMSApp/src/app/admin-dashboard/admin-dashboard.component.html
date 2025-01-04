@@ -28,6 +28,9 @@
     </a>
     <hr>
     <a style="color: rgb(86, 86, 86); font-size: xx-large;">Current Patient List in the Queue</a>
+    <span class="flex justify-end">
+        <button mat-raised-button color="primary" (click)="openDialog()">Add Patient</button>
+    </span>
     <div class="tableFixHead">
         <br>
         <div class="table-responsive">
@@ -41,17 +44,28 @@
                         <th>Prescription</th>
                         <th>Dose</th>
                         <th>Urgency</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let patients of PatientsList">
-                        <td>{{patients.patientId}}</td>
-                        <td>{{patients.name}}</td>
-                        <td>{{patients.age}}</td>
-                        <td>{{patients.bloodGroup}}</td>
-                        <td>{{patients.prescription}}</td>
-                        <td>{{patients.dose}}</td>
-                        <td>{{patients.urgency}}</td>
+                    <tr *ngFor="let patient of PatientsList">
+                        <td>{{patient.patientId}}</td>
+                        <td>{{patient.name}}</td>
+                        <td>{{patient.age}}</td>
+                        <td>{{patient.bloodGroup}}</td>
+                        <td>{{patient.prescription}}</td>
+                        <td>{{patient.dose}}</td>
+                        <td>{{patient.urgency}}</td>
+                        <td>
+                            <button mat-icon-button color="warn" 
+                                [@hoverEffect] 
+                                (mouseover)="onHoverIcon()" 
+                                (mouseleave)="onLeaveIcon()" 
+                                (click)="deletePatient(patient)" 
+                                title="Delete Patient">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
