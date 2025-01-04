@@ -2,7 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppointmentService } from '../services/appointment.service';
 import { AddAppointmentComponent } from '../add.appointment/add.appointment.component';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
 
 @Component({
@@ -29,7 +29,13 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
       transition('hidden <=> visible', [
         animate('0.3s ease-in-out')
       ])
-    ])
+    ]),
+    trigger('blockAnimation', [
+      transition(':enter', [
+          style({ opacity: 0, transform: 'scale(0.5)' }),
+          animate('0.6s ease-in-out', style({ opacity: 1, transform: 'scale(1)' })),
+        ]),
+    ]),
   ]
 })
 
@@ -39,6 +45,13 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 export class Appointment {
   isOverlayVisible: boolean = false;
   selectedAppointment:any;
+  animatedBlocks: Array<{
+    label: string;
+    value: string | number;
+    size: number;
+    color: string;
+    state: string;
+}> = [];
 
   constructor(private appointmentService:AppointmentService,private dialog: MatDialog){
     
@@ -104,9 +117,33 @@ export class Appointment {
     }));
   }
 
+  getAnimatedBlocks(appointment: any) {
+    return Object.entries(appointment).map(([key, value]) => ({
+        label: this.formatKey(key),
+        value,
+        size: this.getRandomSize(),
+        color: this.getRandomColor(),
+        state: 'in',
+    }));
+  }
+
   formatKey(key: string): string {
-      // Convert camelCase or snake_case to readable text
       return key.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/_/g, ' ').toUpperCase();
+  }
+
+  getRandomSize(): number {
+      return Math.floor(Math.random() * 100) + 100; // Sizes between 100px to 200px
+  }
+
+  getRandomColor(): string {
+      const colors = ['#FF5733', '#33FF57', '#3357FF', '#F0A500', '#D72638', '#3A1772'];
+      return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  generateRandomTransform(): string {
+    const x = (Math.random() * 100 - 50).toFixed(2); // -50 to 50
+    const y = (Math.random() * 100 - 50).toFixed(2); // -50 to 50
+    return `translate(${x}px, ${y}px)`;
   }
 
 
