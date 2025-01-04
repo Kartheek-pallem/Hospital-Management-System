@@ -58,8 +58,8 @@ export class Appointment {
   deleteAppointment(appointment:any){
     this.appointmentService.deleteAppointment(appointment.id).subscribe(response=>{
       console.log(response);
+      this.getAppointmentsList();
     });
-    window.location.reload();
   }
 
   hoverState = 'normal';
