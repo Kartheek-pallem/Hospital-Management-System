@@ -62,27 +62,27 @@
 </div>
 <div 
     *ngIf="isOverlayVisible" 
-    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg w-3/4 z-50">
+    class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg w-3/4 z-50 overlay"
+>
     <button 
         mat-icon-button 
         color="warn" 
         (click)="closeOverlay()" 
-        class="absolute top-2 right-2 text-red-500">
+        class="absolute top-2 right-2 text-red-500"
+    >
         <mat-icon>close</mat-icon>
     </button>
-    Appointment Details
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="grid grid-cols-3 gap-4">
         <div 
             *ngFor="let data of getAppointmentDetails(selectedAppointment)" 
-            @blockAnimation 
-            class="bg-blue-50 border border-gray-300 rounded-full p-4 text-center shadow-sm flex items-center justify-center"
+            class=" justify-between items-center data-box"
         >
-            <p class="font-bold text-gray-700">{{ data.label }}:   </p>
-            <p></p>
-            <p class="text-gray-600">{{ data.value }}</p>
+            <p class="font-bold text-gray-700 text-sm">{{ data.label }}</p>
+            <p class="text-gray-600 text-sm">{{ data.value }}</p>
         </div>
     </div>
+    
+    
+    
 </div>
-
-
 

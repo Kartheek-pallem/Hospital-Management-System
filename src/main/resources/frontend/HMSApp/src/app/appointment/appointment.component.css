@@ -37,7 +37,7 @@ button[color="primary"]:hover {
   button[mat-icon-button]:hover {
     animation: squishBounceJump 1s ease-in-out infinite;
   }
-  .overlay {
+.overlay {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -58,28 +58,41 @@ button[color="primary"]:hover {
 }
 
 .data-box {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px 15px;
-    flex: 1 0 45%; /* Two boxes per row */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Background color */
+    background-color: #f3f4f6; /* Light gray background */
+
+    /* Border styling */
+    border: 1px solid #e0e0e0; /* Light gray border */
+
+    /* Padding for content spacing */
+    padding: 16px; /* Internal padding for content */
+
+    /* Box shadow for depth */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    /* Text alignment and spacing */
     text-align: center;
-}
-.overlay {
-    position: fixed;
-    inset: 0;
     display: flex;
-    justify-content: center;
+    flex-direction:column;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
 }
 
-.animated-block {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Label styling */
+.data-box p:first-child {
     font-weight: bold;
-    border-radius: 0.5rem;
+    color: #374151; /* Darker gray for labels */
+    font-size: 14px;
 }
+
+/* Value styling */
+.data-box p:last-child {
+    color: #6b7280; /* Medium gray for values */
+    font-size: 12px;
+}
+
