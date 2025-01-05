@@ -37,7 +37,7 @@
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
                     <tr>
-                        <th>ID</th>
+                        <th>Patient ID</th>
                         <th>Name</th>
                         <th>Age</th>
                         <th>Blood Group</th>
@@ -49,7 +49,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let patient of PatientsList">
-                        <td>{{patient.patientId}}</td>
+                        <td>PAT_{{patient.patientId}}</td>
                         <td>{{patient.name}}</td>
                         <td>{{patient.age}}</td>
                         <td>{{patient.bloodGroup}}</td>

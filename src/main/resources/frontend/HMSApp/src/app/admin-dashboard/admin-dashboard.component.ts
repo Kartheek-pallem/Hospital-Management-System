@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Patient } from '../patient/patient';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MatDialog } from '@angular/material/dialog';
+import { AddPatientComponent } from '../add.patient/add.patient.component';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -57,7 +58,7 @@ export class AdminDashboardComponent {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(AdminDashboardComponent, {
+    const dialogRef = this.dialog.open(AddPatientComponent, {
       width: '400px',
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '200ms',

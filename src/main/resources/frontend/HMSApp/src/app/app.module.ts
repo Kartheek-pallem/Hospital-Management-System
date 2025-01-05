@@ -16,6 +16,7 @@ import { MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatDialogClose } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddPatientComponent } from './add.patient/add.patient.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdminDashboardComponent,
     PatientComponent,
     Appointment,
-    AddAppointmentComponent
+    AddAppointmentComponent,
+    AddPatientComponent
   ],
   imports: [
     BrowserModule,

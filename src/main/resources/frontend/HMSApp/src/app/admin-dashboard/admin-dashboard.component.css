@@ -96,9 +96,11 @@ button[color="warn"] {
     color: rgb(244, 40, 40) !important;
 }
 
-button[color="primary"] {
+button[color=primary] {
     color: rgb(56, 56, 239) !important;
-}
+    position: absolute;
+    right: 87px;
+    }
 
 button[color="warn"]:hover {
     color: darkred !important;

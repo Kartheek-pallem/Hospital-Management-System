@@ -16,6 +16,10 @@ import { Patient } from "../patient/patient";
             return this.httpClient.get<Patient[]>(this.baseURL+'get');
         }
 
+        addPatient(patient:Patient):Observable<Patient>{
+            return this.httpClient.post<Patient>(this.baseURL+'add',patient);
+        }
+
         deletePatient(id:number):Observable<any>{
             var url = new URL(this.baseURL+'delete/'+id);
             return this.httpClient.delete<any>(url.toString());
