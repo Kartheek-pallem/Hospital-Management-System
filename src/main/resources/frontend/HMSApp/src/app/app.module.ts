@@ -17,6 +17,7 @@ import { MatDialogClose } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddPatientComponent } from './add.patient/add.patient.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddPatientComponent } from './add.patient/add.patient.component';
     PatientComponent,
     Appointment,
     AddAppointmentComponent,
-    AddPatientComponent
+    AddPatientComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
